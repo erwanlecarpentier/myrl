@@ -182,6 +182,7 @@ def run(ag, env, instance_number, n_ins, n_ep, n_st, timeout, save_ma, verbose, 
 def benchmark(config, do_run=True, do_save=True, exp_dir=None, do_plot=True, do_show=False, verbose=True):
     # Create saving directory and save configuration
     if do_save:
+        save.create_dir_at('results', verbose=False)  # Create results repo if not already here
         if exp_dir is None:
             exp_dir = save.datetime_directory(verbose=verbose)
         config_filename = save.get_filename(key='global_config', exp_dir=exp_dir)

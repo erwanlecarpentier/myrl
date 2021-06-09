@@ -1,4 +1,4 @@
-git import pandas
+import pandas
 import itertools
 import numpy as np
 import scipy.stats

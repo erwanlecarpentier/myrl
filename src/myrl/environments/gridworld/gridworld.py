@@ -1,3 +1,4 @@
+import os
 import random
 import numpy as np
 from collections import defaultdict
@@ -33,7 +34,8 @@ def action_int_to_str(a):
 
 
 def grid_from_name(grid_name):
-    path = 'drmax/environments/gridworld/grids/' + grid_name + '.txt'
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    path = dir_path + '/grids/' + grid_name + '.txt'
     try:
         g = np.loadtxt(path, dtype=str)
     except:
