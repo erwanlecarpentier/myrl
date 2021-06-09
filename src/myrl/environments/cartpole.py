@@ -6,8 +6,8 @@ permalink: https://perma.cc/C9ZM-652R
 
 import numpy as np
 
-from drmax.environments.environment import Environment
-from drmax.environments.state import State
+from myrl.environments.environment import Environment
+from myrl.environments.state import State
 
 
 class CartPoleState(State):

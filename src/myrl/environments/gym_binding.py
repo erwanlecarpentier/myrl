@@ -1,6 +1,7 @@
+'''
 import gym
 
-from drmax.environments.environment import Environment
+from myrl.environments.environment import Environment
 
 
 def make(name, gamma):
@@ -47,3 +48,4 @@ class GymCartPole(Environment):
             'actions': self.actions,
             'gamma': self.gamma
         }
+'''

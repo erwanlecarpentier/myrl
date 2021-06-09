@@ -5,8 +5,8 @@ Mountain car environment
 import math
 import numpy as np
 
-from drmax.environments.environment import Environment
-from drmax.environments.state import State
+from myrl.environments.environment import Environment
+from myrl.environments.state import State
 
 
 class MountainCarState(State):

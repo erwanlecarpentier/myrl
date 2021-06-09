@@ -2,8 +2,8 @@ import random
 import numpy as np
 from collections import defaultdict
 
-from drmax.environments.environment import Environment
-from drmax.environments.state import State
+from myrl.environments.environment import Environment
+from myrl.environments.state import State
 
 
 def action_str_to_int(a):

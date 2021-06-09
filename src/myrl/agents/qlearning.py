@@ -1,7 +1,7 @@
 import random
 from collections import defaultdict
 
-from drmax.agents.agent import Agent
+from myrl.agents.agent import Agent
 
 
 class QLearning(Agent):

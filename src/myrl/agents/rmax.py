@@ -7,7 +7,7 @@ import random
 import numpy as np
 from collections import defaultdict
 
-from drmax.agents.agent import Agent
+from myrl.agents.agent import Agent
 
 
 def compute_n_model_samples_high_confidence(epsilon, delta, n_states):

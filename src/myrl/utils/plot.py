@@ -1,14 +1,13 @@
-import timeit
-import pandas
+git import pandas
 import itertools
 import numpy as np
 import scipy.stats
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 
-import drmax.utils.save as save
-from drmax.utils.configreader import expand
-from drmax.environments.gridworld.gridworld import action_int_to_str
+import myrl.utils.save as save
+from myrl.utils.configreader import expand
+from myrl.environments.gridworld.gridworld import action_int_to_str
 
 
 COLORS = [

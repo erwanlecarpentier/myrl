@@ -1,21 +1,20 @@
 import torch
-import gym
+# import gym
 import multiprocessing
 
-from drmax.utils.save import agents_config_to_md
+from myrl.utils.save import agents_config_to_md
 
-from drmax.agents.random import Random
-from drmax.agents.rmax import RMax
-from drmax.agents.qlearning import QLearning
-from drmax.agents.dqn import DQN
-from drmax.agents.odqn import ODQN
+from myrl.agents.random import Random
+from myrl.agents.rmax import RMax
+from myrl.agents.qlearning import QLearning
+from myrl.agents.dqn import DQN
 
-from drmax.environments.gridworld.gridworld import GridWorld
-from drmax.environments.cartpole import CartPole
-from drmax.environments.mountain_car import MountainCar
-from drmax.environments.acrobot import Acrobot
-from drmax.environments.pendulum import Pendulum
-import drmax.environments.gym_binding as gym_binding
+from myrl.environments.gridworld.gridworld import GridWorld
+from myrl.environments.cartpole import CartPole
+from myrl.environments.mountain_car import MountainCar
+from myrl.environments.acrobot import Acrobot
+from myrl.environments.pendulum import Pendulum
+import myrl.environments.gym_binding as gym_binding
 
 
 def expand(v, n):

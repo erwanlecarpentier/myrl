@@ -6,11 +6,11 @@ import multiprocessing
 import torch
 from tqdm import trange
 
-import drmax.utils.configreader as reader
-import drmax.utils.save as save
-import drmax.utils.plot as plot
-from drmax.environments.gridworld.gridworld import GridWorld
-from drmax.models import QNetwork
+import myrl.utils.configreader as reader
+import myrl.utils.save as save
+import myrl.utils.plot as plot
+from myrl.environments.gridworld.gridworld import GridWorld
+from myrl.models import QNetwork
 
 
 def run_dill_encoded(payload):

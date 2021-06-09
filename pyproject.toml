@@ -1,6 +1,15 @@
 [build-system]
 requires = [
     "setuptools>=42",
-    "wheel"
+    "wheel",
+    "pandas",
+    "dill",
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "scipy",
+    "torchaudio",
+    "torchaudio",
+    "torchaudio"
 ]
 build-backend = "setuptools.build_meta"
