@@ -15,5 +15,10 @@ Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-UNKNOWN
+# My Reinforcement Learning Library
+
+## Install
+
+	pip install myrl
+
 
