@@ -6,11 +6,11 @@ import multiprocessing
 import torch
 from tqdm import trange
 
-import drmax.utils.configreader as reader
-import drmax.utils.save as save
-import drmax.utils.plot as plot
-from drmax.environments.gridworld.gridworld import GridWorld
-from drmax.models import QNetwork
+import myrl.utils.configreader as reader
+import myrl.utils.save as save
+import myrl.utils.plot as plot
+from myrl.environments.gridworld.gridworld import GridWorld
+from myrl.models import QNetwork
 
 
 def run_dill_encoded(payload):
@@ -182,6 +182,7 @@ def run(ag, env, instance_number, n_ins, n_ep, n_st, timeout, save_ma, verbose, 
 def benchmark(config, do_run=True, do_save=True, exp_dir=None, do_plot=True, do_show=False, verbose=True):
     # Create saving directory and save configuration
     if do_save:
+        save.create_dir_at('results', verbose=False)  # Create results repo if not already here
         if exp_dir is None:
             exp_dir = save.datetime_directory(verbose=verbose)
         config_filename = save.get_filename(key='global_config', exp_dir=exp_dir)

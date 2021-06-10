@@ -54,7 +54,7 @@ def rl_experiment(agent, env, instance_number, n_instances, n_episodes, n_steps,
 
         for step in range(n_steps):
 
-            # Compute the agent's policy
+            # Compute the agent's policy and pass data for learning
             a = agent.act(s, r, is_terminal)
 
             # Execute in MDP

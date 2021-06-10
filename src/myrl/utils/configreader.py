@@ -14,7 +14,7 @@ from myrl.environments.cartpole import CartPole
 from myrl.environments.mountain_car import MountainCar
 from myrl.environments.acrobot import Acrobot
 from myrl.environments.pendulum import Pendulum
-import myrl.environments.gym_binding as gym_binding
+import myrl.environments.gym_wrapper as gym_wrapper
 
 
 def expand(v, n):
@@ -146,13 +146,13 @@ def environment_from_env_config(env_config):
     elif env_class == 'pendulum':
         return Pendulum(name=p['name'], gamma=p['gamma'], sparse_reward=p['sparse_reward'])
     elif env_class == 'gym':
-        return gym_binding.make(name=p['name'], gamma=p['gamma'])
-    elif env_class == 'atari':
+        return gym_wrapper.GymEnvironment(name=p['name'], gym_name=p['gym_name'], gamma=p['gamma'])
+        # elif env_class == 'atari':
         # env = gym.make(p['name'])
         # env.frameskip = p['frameskip']
-        return gym.make(p['name'])
+        # return gym.make(p['name'])
     else:
-        raise ValueError('Environment class [' + env_class + '] not implemented.')
+        raise ValueError('Environment class "' + env_class + '" not implemented.')
 
 
 def environments_agents_from_config(config, exp_dir):

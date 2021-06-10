@@ -2,10 +2,10 @@ import random
 import torch
 import collections
 
-from drmax.agents.agent import Agent
-from drmax.utils.memory import ReplayMemory
-from drmax.models import QNetwork, get_optimizer
-from drmax.utils.save import net_directory, get_filename
+from myrl.agents.agent import Agent
+from myrl.utils.memory import ReplayMemory
+from myrl.models import QNetwork, get_optimizer
+from myrl.utils.save import net_directory, get_filename
 
 
 class DQN(Agent):

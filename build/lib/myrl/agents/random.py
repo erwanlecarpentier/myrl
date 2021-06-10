@@ -1,6 +1,6 @@
 import random
 
-from drmax.agents.agent import Agent
+from myrl.agents.agent import Agent
 
 
 class Random(Agent):

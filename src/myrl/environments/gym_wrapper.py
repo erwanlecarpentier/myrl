@@ -1,16 +1,29 @@
-'''
 import gym
 
 from myrl.environments.environment import Environment
 
 
-def make(name, gamma):
-    if name == 'CartPole-v0':
-        return GymCartPole(name=name, gamma=gamma)
-    else:
-        raise ValueError('Agent name [' + name + '] not found.')
+class GymEnvironment(Environment):
+
+    def __init__(self, name, gym_name, gamma):
+        self.env = gym.make(gym_name)
+        actions = range(self.env.action_space.n)  # Sampling in range is 10 times faster than sampling in a gym Discrete
+        Environment.__init__(self, name=name, actions=actions, gamma=gamma)
+
+    def get_initial_state(self):
+        return self.env.reset()
+
+    def step(self, s, a):
+        """
+        :param s: state
+        :param a: action
+        :return: r, s_p, is_terminal(s_p)
+        """
+        r, s_p, is_terminal, _ = self.env.step(a)
+        return r, s_p, is_terminal
 
 
+'''
 class GymCartPole(Environment):
 
     def __init__(self, name, gamma):
