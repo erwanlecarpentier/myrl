@@ -8,9 +8,17 @@ def get_optimizer(parameters, optimizer_name=None, learning_rate=0.05, momentum=
         return torch.optim.SGD(parameters, lr=learning_rate, momentum=momentum)
 
 
-class QNetwork(torch.nn.Module):
-
+class FullyConnectedNet(torch.nn.Module):
     def __init__(self, input_size, output_size, hidden_layers):
+        """
+        A fully connected network model with relu activation functions.
+        :param input_size: (int) input dimensionality
+        :param output_size: (int) output dimensionality
+        :param hidden_layers: (list) hidden layers sizes
+
+        Example:
+            net = FullyConnectedNet(input_size=3, output_size=2, hidden_layers=[5, 7])
+        """
         super().__init__()
 
         self.layers = torch.nn.ModuleList([torch.nn.Linear(input_size, hidden_layers[0])])
@@ -19,8 +27,8 @@ class QNetwork(torch.nn.Module):
         self.output = torch.nn.Linear(hidden_layers[-1], output_size)
 
     def forward(self, x):
-        for la in self.layers:
-            x = torch.relu(la(x))
+        for layer in self.layers:
+            x = torch.relu(layer(x))
         return self.output(x)
 
     def save(self, filename):

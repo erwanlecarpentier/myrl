@@ -10,7 +10,7 @@ import myrl.utils.configreader as reader
 import myrl.utils.save as save
 import myrl.utils.plot as plot
 from myrl.environments.gridworld.gridworld import GridWorld
-from myrl.models import QNetwork
+from myrl.models import FullyConnectedNet
 
 
 def run_dill_encoded(payload):
@@ -293,7 +293,7 @@ def train_constant_net(config, env_config, do_save):
     n_a = len(env.actions)
 
     # Initlialize Q-network
-    net = QNetwork(input_size=state_dimension, output_size=n_a, hidden_layers=config['hidden_layers'])
+    net = FullyConnectedNet(input_size=state_dimension, output_size=n_a, hidden_layers=config['hidden_layers'])
 
     # Create uniform input
     batch = generate_uniform_tensors(n_tensors=config['batch_size'], dtype=state_dtype, dimension=state_dimension,

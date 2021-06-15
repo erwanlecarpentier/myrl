@@ -4,7 +4,7 @@ import collections
 
 from myrl.agents.agent import Agent
 from myrl.utils.memory import ReplayMemory
-from myrl.models import QNetwork, get_optimizer
+from myrl.models import FullyConnectedNet, get_optimizer
 from myrl.utils.save import net_directory, get_filename
 
 
@@ -41,8 +41,8 @@ class DQN(Agent):
         self.replay_memory = ReplayMemory(self.replay_memory_size)
 
         # Create Q-networks
-        self.Q = QNetwork(input_size=self.state_dimension, output_size=self.n_a, hidden_layers=self.hidden_layers)
-        self.Q_target = QNetwork(input_size=self.state_dimension, output_size=self.n_a,
+        self.Q = FullyConnectedNet(input_size=self.state_dimension, output_size=self.n_a, hidden_layers=self.hidden_layers)
+        self.Q_target = FullyConnectedNet(input_size=self.state_dimension, output_size=self.n_a,
                                  hidden_layers=self.hidden_layers)
 
         # Load existing Q-networks if required

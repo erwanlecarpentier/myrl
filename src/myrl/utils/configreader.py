@@ -72,16 +72,6 @@ def agent_from_class(agent_class, p, env, device):
                    minibatch_size=p['minibatch_size'], double_dqn=p['double_dqn'], hidden_layers=p['hidden_layers'],
                    target_update_period=p['target_update_period'], n_gradient_updates=p['n_gradient_updates'],
                    load_constant_net=p['load_constant_net'], device=device)
-    elif agent_class == 'odqn':
-        return ODQN(name=p['name'], state_dimension=env.get_state_dimension(), actions=env.actions, gamma=env.gamma,
-                    learning_rate=p['learning_rate'], replay_memory_size=p['replay_memory_size'],
-                    minibatch_size=p['minibatch_size'], double_dqn=p['double_dqn'], hidden_layers=p['hidden_layers'],
-                    target_update_period=p['target_update_period'], n_gradient_updates=p['n_gradient_updates'],
-                    data_ratio=p['data_ratio'], alpha=p['alpha'], alpha_one_time=p['alpha_one_time'],
-                    state_augmentation_type=p['state_augmentation_type'],
-                    state_magnitude=env.get_state_magnitude(), state_dtype=env.get_state_dtype(),
-                    cov_multiplier=p['cov_multiplier'], optimistic_factor=p['optimistic_factor'],
-                    include_symmetric=p['include_symmetric'], device=device)
     else:
         raise ValueError('Agent class [' + agent_class + '] not found.')
 
