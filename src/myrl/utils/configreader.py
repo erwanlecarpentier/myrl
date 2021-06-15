@@ -155,8 +155,13 @@ def environments_agents_from_config(config, exp_dir):
     return environments_agents
 
 
-def device_from_config(config):
-    if config['gpu'] and torch.cuda.is_available():
+def device_from_config(cfg):
+    """
+    Deduce device from main config dict. Default is CPU.
+    :param cfg: (dict) main config dict
+    :return: torch device
+    """
+    if "gpu" in cfg and cfg['gpu'] and torch.cuda.is_available():
         return torch.device('cuda')
     else:
         return torch.device('cpu')
