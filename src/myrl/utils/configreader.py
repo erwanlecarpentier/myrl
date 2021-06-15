@@ -125,8 +125,7 @@ def environment_from_env_config(env_config):
     p = env_config['parameters']
 
     if env_class == 'gridworld':
-        return GridWorld(name=p['name'], gamma=p['gamma'], grid_name=p['grid_name'], size=p['size'],
-                         slip_probability=p['slip_probability'], is_goal_terminal=p['is_goal_terminal'])
+        return GridWorld(**p)
     elif env_class == 'cartpole':
         return CartPole(name=p['name'], gamma=p['gamma'], sparse_reward=p['sparse_reward'])
     elif env_class == 'mountaincar':
